@@ -77,7 +77,7 @@ public class SwiftMultiImagePicker2Plugin: NSObject, FlutterPlugin {
                     assets.append(asset)
                 })
                     
-               vc.defaultSelections = assets
+//                vc.defaultSelections = assets
             }
 
             
@@ -101,12 +101,12 @@ public class SwiftMultiImagePicker2Plugin: NSObject, FlutterPlugin {
             vc.settings.selection.max = maxImages
 
             if (enableCamera) {
-               vc.takePhotos = true
+               vc.settings.camera.enabled = true
             }
             
             if let takePhotoIcon = options["takePhotoIcon"] {
                 if (!takePhotoIcon.isEmpty) {
-                   vc.takePhotoIcon = UIImage(named: takePhotoIcon)
+                   vc.settings.camera.icon = UIImage(named: takePhotoIcon)
                 }
             }
 
@@ -136,13 +136,13 @@ public class SwiftMultiImagePicker2Plugin: NSObject, FlutterPlugin {
 
             if let selectionTextColor = options["selectionTextColor"] {
                 if (!selectionTextColor.isEmpty) {
-                   vc.selectionTextAttributes[NSAttributedString.Key.foregroundColor] = hexStringToUIColor(hex: selectionTextColor)
+//                    vc.selectionTextAttributes[NSAttributedString.Key.foregroundColor] = hexStringToUIColor(hex: selectionTextColor)
                 }
             }
 
             if let selectionCharacter = options["selectionCharacter"] {
                 if (!selectionCharacter.isEmpty) {
-                   vc.selectionCharacter = Character(selectionCharacter)
+//                    vc.selectionCharacter = Character(selectionCharacter)
                 }
             }
             
